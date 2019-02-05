@@ -1,3 +1,5 @@
+#PYBANK
+
 #import stuff
 import os
 import csv
@@ -57,13 +59,31 @@ minprofit_date = months[min_index]
 print("Financial Analysis")
 print("-----------------------")
 print("Total Months: " + str(total_months))
-print("Total: " + str(PL_sum))
-print("Average Change: " + str(avg_chg))
-print("Greatest Increase in Profits: " + str(maxprofit) + " (" + str(maxprofit_date) + ")")
-print("Greatest Decrease in Profits: " + str(minprofit) + " (" + str(minprofit_date) + ")")
+print("Total: $" + str(PL_sum))
+print("Average Change: $" + str(avg_chg))
+print("Greatest Increase in Profits: " + str(maxprofit_date) + " ($" + str(maxprofit) + ")")
+print("Greatest Decrease in Profits: " + str(minprofit_date) + " ($" + str(minprofit) + ")")
 
 #export results to text file
+with open("PyBank_Summary.txt","w") as text_file:
+    text_file.write("Financial Analysis")
+    text_file.write("\n")
+    text_file.write("-----------------------")
+    text_file.write("\n")
+    text_file.write("Total Months: " + str(total_months))
+    text_file.write("\n")
+    text_file.write("Total: $" + str(PL_sum))
+    text_file.write("\n")
+    text_file.write("Average Change: $" + str(avg_chg))
+    text_file.write("\n")
+    text_file.write("Greatest Increase in Profits: " + str(maxprofit_date) + "($" + str(maxprofit) + ")")
+    text_file.write("\n")
+    text_file.write("Greatest Decrease in Profits: " + str(minprofit_date) + " ($" + str(minprofit) + ")")
+    
 
+
+#output_file = "pybank_summary.txt"
+#output_file_path = os.path.join("Final Results", output_file)
 
 
 
