@@ -1,5 +1,3 @@
-#PYPOLL
-
 #import stuff
 import os
 import csv
@@ -12,7 +10,6 @@ votes = []
 candidates = []
 #number of votes counter
 total_votes = 0
-
 
 #read file
 with open(csvpath, newline='') as csvfile:
@@ -29,6 +26,7 @@ with open(csvpath, newline='') as csvfile:
 uniquecands = set(candidates)
 uniquecandslist = list(uniquecands)
 
+#total number of votes for each candidate, based on index in candidates list
 x = 0
 for x in range(x,2):
     total1 = candidates.count(uniquecandslist[0])
@@ -46,7 +44,7 @@ for x in range(x,2):
     total4 = candidates.count(uniquecandslist[3])
 percent4 = str(int(total4/total_votes*100))+"%"
 
-
+#conditional loop to find candidate with most votes, and assign name to variable winner
 if total1 > total2 and total1 > total3 and total1 > total4:
    winner = (uniquecandslist[0])
 elif total2 > total1 and total2 > total3 and total2 > total4:
@@ -56,14 +54,6 @@ elif total3 > total1 and total3 > total2 and total3 > total4:
 elif total4 > total1 and total4 > total2 and total4 > total3:
    winner = (uniquecandslist[3])
 
-
-#for row in range(len(candidates),2):
- #   candvotes = int(uniquecands[0].count)
-
-#for row in range(len(candidates),2):
- #   x = 0
-  #  candvotes = candvotes(uniquecands[x].counts)
-   # x += 1
 
 print("Election Results")
 print("--------------------------------------")

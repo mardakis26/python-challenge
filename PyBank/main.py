@@ -1,5 +1,3 @@
-#PYBANK
-
 #import stuff
 import os
 import csv
@@ -13,7 +11,6 @@ profitloss = []
 
 #counter for total number of months in column 1
 total_months = 0
-
 
 #read file
 with open(csvpath, newline='') as csvfile:
@@ -38,8 +35,6 @@ for x in range(1,(len(months))):
     profitchange.append((profitloss[x] - profitloss[x-1]))
     #gives average change in profit/loss
     avg_chg = sum(profitchange) / len(profitchange)
-
-#need to find max amount and corresponding date
 
 #shows max profit
 maxprofit = max(profitchange)
@@ -79,14 +74,3 @@ with open("PyBank_Summary.txt","w") as text_file:
     text_file.write("Greatest Increase in Profits: " + str(maxprofit_date) + "($" + str(maxprofit) + ")")
     text_file.write("\n")
     text_file.write("Greatest Decrease in Profits: " + str(minprofit_date) + " ($" + str(minprofit) + ")")
-    
-
-
-#output_file = "pybank_summary.txt"
-#output_file_path = os.path.join("Final Results", output_file)
-
-
-
-
-
-
